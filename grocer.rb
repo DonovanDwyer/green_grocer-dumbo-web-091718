@@ -23,7 +23,7 @@ def apply_coupons(cart, coupons)
         :clearance => cart[couphash[:item]][:clearance],
         :count => couphash.count
       }
-      binding.pry
+      #binding.pry
     end
   end
   cart

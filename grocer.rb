@@ -16,13 +16,14 @@ end
 
 def apply_coupons(cart, coupons)
   coupons.map do |couphash|
-    if cart.has_key? couphash[:item]
+    if cart.has_key?("#{couphash[:item]} W/COUPON")
       
+    elsif cart.has_key? couphash[:item]
       cart[couphash[:item]][:count] -= couphash[:num]
       cart["#{couphash[:item]} W/COUPON"] = {
         :price => couphash[:cost],
         :clearance => cart[couphash[:item]][:clearance],
-        :count => count
+        :count => 
       }
       binding.pry
     end

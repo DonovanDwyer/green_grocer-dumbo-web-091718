@@ -23,7 +23,7 @@ def apply_coupons(cart, coupons)
       cart["#{couphash[:item]} W/COUPON"] = {
         :price => couphash[:cost],
         :clearance => cart[couphash[:item]][:clearance],
-        :count => 
+        :count => 1
       }
       #binding.pry
     end

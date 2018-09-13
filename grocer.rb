@@ -17,7 +17,7 @@ end
 def apply_coupons(cart, coupons)
   coupons.map do |couphash|
     if cart.has_key?("#{couphash[:item]} W/COUPON")
-      cart[couphash[:item]][:count] += 1
+      cart["#{couphash[:item]} W/COUPON"][:count] += 1
     elsif cart.has_key? couphash[:item]
       cart[couphash[:item]][:count] -= couphash[:num]
       cart["#{couphash[:item]} W/COUPON"] = {

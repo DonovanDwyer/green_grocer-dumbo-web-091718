@@ -44,5 +44,6 @@ def checkout(cart, coupons)
   total = apply_coupons(total, coupons)
   total = apply_clearance(total)
   charge = 0
+  total.each {|x,y| charge += y[:price]}
   binding.pry
 end

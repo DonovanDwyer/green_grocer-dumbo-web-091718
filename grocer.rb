@@ -28,7 +28,7 @@ def apply_coupons(cart, coupons)
       }
    # if cart[couphash[:item]][:count] <= 0 then cart.delete(cart[couphash[:item]]) end
     #  binding.pry
-  #  end
+    end
   end
   cart
 end

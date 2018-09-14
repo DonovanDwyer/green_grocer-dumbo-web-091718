@@ -27,7 +27,7 @@ def apply_coupons(cart, coupons)
         :count => 1
       }
     if cart[couphash[:item]][:count] <= 0 then cart.delete(cart[couphash[:item]]) end
-      #binding.pry
+      binding.pry
     end
   end
   cart

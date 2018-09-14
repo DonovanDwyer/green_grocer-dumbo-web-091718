@@ -19,7 +19,7 @@ def apply_coupons(cart, coupons)
     if cart.has_key?("#{couphash[:item]} W/COUPON")
       cart["#{couphash[:item]} W/COUPON"][:count] += 1
       cart[couphash[:item]][:count] -= couphash[:num]
-    elsif cart.has_key? couphash[:item]  && cart[couphash[:item]][:count] >= couphash[:num]
+    elsif cart.has_key? couphash[:item] ## && cart[couphash[:item]][:count] >= couphash[:num]
     binding.pry
       cart[couphash[:item]][:count] -= couphash[:num]
       cart["#{couphash[:item]} W/COUPON"] = {

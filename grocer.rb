@@ -26,8 +26,8 @@ def apply_coupons(cart, coupons)
         :clearance => cart[couphash[:item]][:clearance],
         :count => 1
       }
-    if cart[couphash[:item]][:count] <= 0 then cart
-      binding.pry
+    if cart[couphash[:item]][:count] <= 0 then cart.delete[couphash[:item]] end
+      #binding.pry
     end
   end
   cart
@@ -44,7 +44,7 @@ def checkout(cart, coupons)
   total = consolidate_cart(cart)
   total = apply_coupons(total, coupons)
   total = apply_clearance(total)
-  binding.pry
+  #binding.pry
   charge = 0
   total.each {|x,y| charge += y[:price]}
   if charge > 100 then charge -= charge * 0.1 end

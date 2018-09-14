@@ -43,7 +43,6 @@ def checkout(cart, coupons)
   total = consolidate_cart(cart)
   total = apply_coupons(total, coupons)
   total = apply_clearance(total)
-  binding.pry
   charge = 0
   total.each {|x,y| charge += y[:price]}
   if charge > 100 then charge -= charge * 0.1 end

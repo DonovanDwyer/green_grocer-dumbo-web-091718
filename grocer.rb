@@ -35,7 +35,7 @@ end
 def apply_clearance(cart)
   cart.map do |x|
     if x[1][:clearance] then x[1][:price] -= x[1][:price] * 0.2 end
-  end.each_with_object({}) {|value, hash| hash[value[0]] = value[1]
+  end.each_with_object({}) {|value, hash| hash[value[0]] = value[1]}
   binding.pry
   cart
 end
